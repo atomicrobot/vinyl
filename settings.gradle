@@ -1,0 +1,3 @@
+include ':vinyl-annotations',
+        ':vinyl-compiler',
+        ':vinyl-samples'

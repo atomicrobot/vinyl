@@ -1,0 +1,26 @@
+branches:
+  except:
+  - gh-pages
+
+env:
+  global:
+  - secure: "WjHGH9AKbxz6MSP98rEMUzNP1rGydHr0wvTH4nMdMRETzB7sTLkMgiWuicGnAZAvH3Yvo6aRogUEOhHQfIEUOozv83I58VGMYal+4tz5TMZATlg9kF1DLjsZVOC1mAihaSq2LdeJq8uXRZTrnxoXQiQwsSkIQTZ9dIXaZxfLS0o="
+  - secure: "qKryZ4IRHqC0wM6ALWLt7isfi7yQa2P5Yd1NF6xCLEU0lHYsOew3k0KIdsnTzRWq6TxzAslzuBHzHfMN717jcVZrciK46E+7Gf/hInJbuGK9xdy5sUDkrTqTt+1ROc2/bTHhmqNCkVe/qVGkBJErfKty1Ct00zM1FBnC3rXkEws="
+
+language: android
+
+jdk: oraclejdk7
+
+android:
+  components:
+  - build-tools-21.1.1
+  - android-21
+
+before_script:
+- echo no | android create avd --force -n test -t android-21 --abi armeabi-v7a
+- emulator -avd test -no-skin -no-audio -no-window &
+- android-wait-for-emulator
+- adb shell input keyevent 82 &
+
+after_success:
+- ./gradlew uploadArchives -PNEXUS_USERNAME=${NEXUS_USERNAME} -PNEXUS_PASSWORD=${NEXUS_PASSWORD}
