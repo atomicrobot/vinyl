@@ -4,7 +4,6 @@ dependencies {
     compile project(':vinyl-annotations')
 
     compile 'com.squareup:javapoet:1.0.0'
-    compile 'com.google.guava:guava:18.0'
     compile 'com.google.auto.service:auto-service:1.0-rc2'    
 }
 
