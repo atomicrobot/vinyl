@@ -4,10 +4,10 @@ branches:
 
 env:
   global:
-  - secure: WjHGH9AKbxz6MSP98rEMUzNP1rGydHr0wvTH4nMdMRETzB7sTLkMgiWuicGnAZAvH3Yvo6aRogUEOhHQfIEUOozv83I58VGMYal+4tz5TMZATlg9kF1DLjsZVOC1mAihaSq2LdeJq8uXRZTrnxoXQiQwsSkIQTZ9dIXaZxfLS0o=
-  - secure: qKryZ4IRHqC0wM6ALWLt7isfi7yQa2P5Yd1NF6xCLEU0lHYsOew3k0KIdsnTzRWq6TxzAslzuBHzHfMN717jcVZrciK46E+7Gf/hInJbuGK9xdy5sUDkrTqTt+1ROc2/bTHhmqNCkVe/qVGkBJErfKty1Ct00zM1FBnC3rXkEws=
-  - secure: d1CVQaD7d+B1mJ1Wx0CkwKHRnKMcFav5Fc4zt08hNUGAiQTcvradDphO102UosFeNYPkwae6vqB5bwiGI1mp+MdktvAm7Tj0rrrb5thp5XIUwTZf2ZkRni4KL8Il0jfiWyUmXFvZ0DIiWm9DgEG6Cxx1CqETKibBPF0pBpnHJ4E=
-  - secure: ZbxzmeAmJ7FK30EtIcwu9TWmMoCCvLvIjYtmnTewL2a3QE4G2wuDpCVuiv7S6a+ugEaaro6folEeYyBShoeM75U++g8Ek3Ti6FWN9OLBYOaM1F9OEGq+Osoh1ER19VpRh8za75uvjwGru192W6woNcvNepyZT2feJO0SKSJgE6k=
+  - secure: bifCJSRT1PZ7mdxjqzN/KpmHagaHXM8z7/QK6qwzHFe6yKNc7MC4IupjauvKX08o4K2TEsSLhIDcrj7dWArND471UPndtjQ9HXRwPtQ9L6LVhvSIG3z89m5/IqzWHBPrixKOag1OZBwQixK3bRruTEp2WMD5d3qlV3fQ+JKn90Q=
+  - secure: m6qyqs3CV4Z0P3VO6jWZOMPQ64gbPrJnp7YHIcg7+0R/a5TrTkoV5ldw2o9Rh6mTp5xsHPJRsQeqyQOLv5gaoF7TNx5chUhtWXZ7dwRxE6ysQMnsHRxIwyDTbA7fvzL4NI99o9KmepHql8lp5BpMS5Vktt18ngIkBwPovViXzzg=
+  - secure: kvjQX7NpmrX1zpWekpIkj0qmu3c4il1mlICe8d4JTD8kfC9o4KEgxHTIIa6bEfAH90CVmthzpBJVa07m0sgX2GMRy4S+eqeHSv3EGXg8EgHOR1yu1IZYnsLK3snOsV/TT3kAq373OYyIR/NvrA53UpBcqSN/3RtJe9YYrxqME/U=
+  - secure: LXJxR4MOerbZZQRMKHeQ+1NSTJtMJ2g0dsI4xUlHt6A1yD/rTAFdEYJ2F3hRMuOvdJesWZriuqRQg3F3g8FGcI2fuCRcoWOEIznrrH+KTmszYQ3/IQFvytLbdgsU9uMiQGP0+dvJejw5n9aWYGfLm30g0Bcmah0X2dYMsCaooqo=
 
 language: android
 
@@ -28,4 +28,5 @@ before_script:
 - adb shell input keyevent 82 &
 
 after_success:
-- "./gradlew uploadArchives -PNEXUS_USERNAME=${NEXUS_USERNAME} -PNEXUS_PASSWORD=${NEXUS_PASSWORD} -Psigning.password=${signing.password}"
+- "./gradlew uploadArchives -PNEXUS_USERNAME=${NEXUS_USERNAME} -PNEXUS_PASSWORD=${NEXUS_PASSWORD}
+  -Psigning.password=${signing.password}"
