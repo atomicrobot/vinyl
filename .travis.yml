@@ -4,8 +4,10 @@ branches:
 
 env:
   global:
-  - secure: "WjHGH9AKbxz6MSP98rEMUzNP1rGydHr0wvTH4nMdMRETzB7sTLkMgiWuicGnAZAvH3Yvo6aRogUEOhHQfIEUOozv83I58VGMYal+4tz5TMZATlg9kF1DLjsZVOC1mAihaSq2LdeJq8uXRZTrnxoXQiQwsSkIQTZ9dIXaZxfLS0o="
-  - secure: "qKryZ4IRHqC0wM6ALWLt7isfi7yQa2P5Yd1NF6xCLEU0lHYsOew3k0KIdsnTzRWq6TxzAslzuBHzHfMN717jcVZrciK46E+7Gf/hInJbuGK9xdy5sUDkrTqTt+1ROc2/bTHhmqNCkVe/qVGkBJErfKty1Ct00zM1FBnC3rXkEws="
+  - secure: WjHGH9AKbxz6MSP98rEMUzNP1rGydHr0wvTH4nMdMRETzB7sTLkMgiWuicGnAZAvH3Yvo6aRogUEOhHQfIEUOozv83I58VGMYal+4tz5TMZATlg9kF1DLjsZVOC1mAihaSq2LdeJq8uXRZTrnxoXQiQwsSkIQTZ9dIXaZxfLS0o=
+  - secure: qKryZ4IRHqC0wM6ALWLt7isfi7yQa2P5Yd1NF6xCLEU0lHYsOew3k0KIdsnTzRWq6TxzAslzuBHzHfMN717jcVZrciK46E+7Gf/hInJbuGK9xdy5sUDkrTqTt+1ROc2/bTHhmqNCkVe/qVGkBJErfKty1Ct00zM1FBnC3rXkEws=
+  - secure: d1CVQaD7d+B1mJ1Wx0CkwKHRnKMcFav5Fc4zt08hNUGAiQTcvradDphO102UosFeNYPkwae6vqB5bwiGI1mp+MdktvAm7Tj0rrrb5thp5XIUwTZf2ZkRni4KL8Il0jfiWyUmXFvZ0DIiWm9DgEG6Cxx1CqETKibBPF0pBpnHJ4E=
+  - secure: ZbxzmeAmJ7FK30EtIcwu9TWmMoCCvLvIjYtmnTewL2a3QE4G2wuDpCVuiv7S6a+ugEaaro6folEeYyBShoeM75U++g8Ek3Ti6FWN9OLBYOaM1F9OEGq+Osoh1ER19VpRh8za75uvjwGru192W6woNcvNepyZT2feJO0SKSJgE6k=
 
 language: android
 
@@ -16,6 +18,9 @@ android:
   - build-tools-21.1.1
   - android-21
 
+before_install:
+- echo $secret_file_passphrase | gpg secret.asc.gpg
+
 before_script:
 - echo no | android create avd --force -n test -t android-21 --abi armeabi-v7a
 - emulator -avd test -no-skin -no-audio -no-window &
@@ -23,4 +28,4 @@ before_script:
 - adb shell input keyevent 82 &
 
 after_success:
-- ./gradlew uploadArchives -PNEXUS_USERNAME=${NEXUS_USERNAME} -PNEXUS_PASSWORD=${NEXUS_PASSWORD}
+- "./gradlew uploadArchives -PNEXUS_USERNAME=${NEXUS_USERNAME} -PNEXUS_PASSWORD=${NEXUS_PASSWORD}"
