@@ -13,4 +13,7 @@ allprojects {
     repositories {
         jcenter()
     }
+
+    ext."signing.keyId" = "8A74EC0C"
+    ext."signing.secretKeyRingFile" = "${rootProject.projectDir}/signing.gpg"
 }

@@ -14,7 +14,7 @@ android:
   - build-tools-21.1.1
   - android-21
 before_install:
-- echo ${secret_file_passphrase} | gpg --passphrase-fd 0 secret.asc.gpg
+- echo ${secret_file_passphrase} | gpg --passphrase-fd 0 signing.gpg.gpg
 before_script:
 - echo no | android create avd --force -n test -t android-21 --abi armeabi-v7a
 - emulator -avd test -no-skin -no-audio -no-window &
