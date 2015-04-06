@@ -1,32 +1,25 @@
 branches:
   except:
   - gh-pages
-
 env:
   global:
   - secure: bifCJSRT1PZ7mdxjqzN/KpmHagaHXM8z7/QK6qwzHFe6yKNc7MC4IupjauvKX08o4K2TEsSLhIDcrj7dWArND471UPndtjQ9HXRwPtQ9L6LVhvSIG3z89m5/IqzWHBPrixKOag1OZBwQixK3bRruTEp2WMD5d3qlV3fQ+JKn90Q=
   - secure: m6qyqs3CV4Z0P3VO6jWZOMPQ64gbPrJnp7YHIcg7+0R/a5TrTkoV5ldw2o9Rh6mTp5xsHPJRsQeqyQOLv5gaoF7TNx5chUhtWXZ7dwRxE6ysQMnsHRxIwyDTbA7fvzL4NI99o9KmepHql8lp5BpMS5Vktt18ngIkBwPovViXzzg=
   - secure: kvjQX7NpmrX1zpWekpIkj0qmu3c4il1mlICe8d4JTD8kfC9o4KEgxHTIIa6bEfAH90CVmthzpBJVa07m0sgX2GMRy4S+eqeHSv3EGXg8EgHOR1yu1IZYnsLK3snOsV/TT3kAq373OYyIR/NvrA53UpBcqSN/3RtJe9YYrxqME/U=
-  - secure: LXJxR4MOerbZZQRMKHeQ+1NSTJtMJ2g0dsI4xUlHt6A1yD/rTAFdEYJ2F3hRMuOvdJesWZriuqRQg3F3g8FGcI2fuCRcoWOEIznrrH+KTmszYQ3/IQFvytLbdgsU9uMiQGP0+dvJejw5n9aWYGfLm30g0Bcmah0X2dYMsCaooqo=
-
+  - secure: YoPf7eKeqpDYGZdAohGr5Fcyg4RPOuaGqJk6p3918Sh0wDAhiQf84P2AN3EMaysePnP8cjLYdY1e/53xyPwHbf+/NzDjc8CgF6R4jQKjttD/14N8af9nw89qjEnqajaeVOXpJjEu7e7A/hg7IfWAl6hR+6WFgCJcJjaOfp0PTk4=
 language: android
-
 jdk: oraclejdk7
-
 android:
   components:
   - build-tools-21.1.1
   - android-21
-
 before_install:
 - echo ${secret_file_passphrase} | gpg --passphrase-fd 0 secret.asc.gpg
-
 before_script:
 - echo no | android create avd --force -n test -t android-21 --abi armeabi-v7a
 - emulator -avd test -no-skin -no-audio -no-window &
 - android-wait-for-emulator
 - adb shell input keyevent 82 &
-
 after_success:
 - "./gradlew uploadArchives -PNEXUS_USERNAME=${NEXUS_USERNAME} -PNEXUS_PASSWORD=${NEXUS_PASSWORD}
-  -Psigning.password=${signing.password}"
+  -Psigning.password=${signing_password}"
