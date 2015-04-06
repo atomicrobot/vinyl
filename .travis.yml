@@ -28,4 +28,4 @@ before_script:
 - adb shell input keyevent 82 &
 
 after_success:
-- "./gradlew uploadArchives -PNEXUS_USERNAME=${NEXUS_USERNAME} -PNEXUS_PASSWORD=${NEXUS_PASSWORD}" -Psigning.password=${signing.password}
+- "./gradlew uploadArchives -PNEXUS_USERNAME=${NEXUS_USERNAME} -PNEXUS_PASSWORD=${NEXUS_PASSWORD} -Psigning.password=${signing.password}"
