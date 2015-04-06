@@ -239,17 +239,18 @@ buildscript {
   }
 
   dependencies {
-    classpath ‘com.android.tools.build:gradle:{latest-version}’
-    classpath ‘com.neenbedankt.gradle.plugins:{latest-version}’
+    // Or latest versions
+    classpath 'com.android.tools.build:gradle:1.1.2'
+    classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
   }
 }
 
-apply plugin: ‘com.android.application’
-apply plugin: ‘android-apt’
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
 
 dependencies {
-  apt ‘com.madebyatomicrobot:vinyl-compiler:{latest-version}’
-  compile ‘com.madebyatomicrobot:vinyl-annotations:{latest-version}’
+  apt 'com.madebyatomicrobot:vinyl-compiler:{latest-version}'
+  compile 'com.madebyatomicrobot:vinyl-annotations:{latest-version}'
 }
 ```
 
