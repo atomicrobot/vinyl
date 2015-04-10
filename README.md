@@ -2,9 +2,9 @@
 
 [![Build Status](https://travis-ci.org/madebyatomicrobot/vinyl.svg?branch=master)](https://travis-ci.org/madebyatomicrobot/vinyl)
 
-Vinyl makes it simple to work with [Cursors][cursor-javadoc] and 
-[ContentValues][contentvalues-javadoc] in your application's domain language.  Vinyl is an amazing
-sounding record.
+Vinyl is an annotation processor that makes it simple to work with [Cursors][cursor-javadoc] and
+[ContentValues][contentvalues-javadoc] using your application's domain language.
+Vinyl is an amazing sounding record.
 
 Motivation
 ==========
