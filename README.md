@@ -3,8 +3,8 @@
 [![Build Status](https://travis-ci.org/madebyatomicrobot/vinyl.svg?branch=master)](https://travis-ci.org/madebyatomicrobot/vinyl)
 
 Vinyl makes it simple to work with [Cursors][cursor-javadoc] and 
-[ContentValues][contentvalues-javadoc] in your application's domain language.  Vinyl is the best 
-kind of record.
+[ContentValues][contentvalues-javadoc] in your application's domain language.  Vinyl is an amazing
+sounding record.
 
 Motivation
 ==========
@@ -290,7 +290,19 @@ License
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-    
+
+About Atomic Robot
+=======
+
+[![Atomic Robot Logo](website/static/ar_logo.png)](http://www.madebyatomicrobot.com)  
+[madebyatomicrobot.com](http://www.madebyatomicrobot.com)
+
+We are iOS & Android experts that develop native mobile applications for startups and enterprise clients.
+From wireframes to final design, we understand the unique challenges and opportunities in designing for mobile.
+From concept to launch, we can guide you every step of the way.
+
+Our clients partner with us to help them deliver exceptional mobile solutions to grow their business.
+[Hire us][hire-us] to work on your next project.
     
 [cursor-javadoc]: http://developer.android.com/reference/android/database/Cursor.html
 [contentvalues-javadoc]: http://developer.android.com/reference/android/content/ContentValues.html
@@ -298,3 +310,4 @@ License
 [contacts-training-doc]: http://developer.android.com/training/contacts-provider/retrieve-names.html
 [support-annotations]: http://tools.android.com/tech-docs/support-annotations
 [snap]: https://oss.sonatype.org/content/repositories/snapshots/
+[hire-us]: http://www.madebyatomicrobot.com/questionnaire/
