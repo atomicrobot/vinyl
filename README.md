@@ -16,7 +16,7 @@ Assume there is this cursor describing employees:
 | John | 30  | 0       |
 | Jane | 30  | 1       |
 
-Accessing the fields for the cursor for the would normally look similar to this (undesirable) code:
+Accessing the employee fields for the cursor would normally look similar to this (undesirable) code:
 
 ```java
 cursor.moveToFirst();
